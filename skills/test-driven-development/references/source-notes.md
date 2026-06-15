@@ -3,7 +3,7 @@
 - Primary source: Test-Driven Development: By Example
 - Author: Kent Beck
 - Year: 2002
-- URL: https://archive.org/details/est-driven-development-by-example
+- URL: https://dl.acm.org/doi/10.5555/579193
 
 ## Drafting Notes
 

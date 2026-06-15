@@ -283,7 +283,7 @@ theories:
       title: "Test-Driven Development: By Example"
       author: "Kent Beck"
       year: 2002
-      url: "https://archive.org/details/est-driven-development-by-example"
+      url: "https://dl.acm.org/doi/10.5555/579193"
     supporting_source:
       title: "Test Driven Development"
       url: "https://www.martinfowler.com/bliki/TestDrivenDevelopment.html"
