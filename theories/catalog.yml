@@ -176,8 +176,8 @@ theories:
     status: candidate
     primary_source:
       title: "Cognitive Dimensions of Notations: Design Tools for Cognitive Technology"
-      author: "Thomas R. G. Green and Marian Petre"
-      year: 1996
+      author: "A. F. Blackwell et al."
+      year: 2001
       url: "https://www.cl.cam.ac.uk/~afb21/publications/CT2001.pdf"
     supporting_source:
       title: "Cognitive Dimensions of Notations: Understanding the Ergonomics of Diagram Use"
