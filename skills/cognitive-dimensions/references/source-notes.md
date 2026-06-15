@@ -1,8 +1,8 @@
 # Source Notes: cognitive-dimensions
 
 - Primary source: Cognitive Dimensions of Notations: Design Tools for Cognitive Technology
-- Author: Thomas R. G. Green and Marian Petre
-- Year: 1996
+- Author: A. F. Blackwell et al.
+- Year: 2001
 - URL: https://www.cl.cam.ac.uk/~afb21/publications/CT2001.pdf
 
 ## Drafting Notes
