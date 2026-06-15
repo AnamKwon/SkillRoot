@@ -220,3 +220,75 @@ theories:
       - "State caller obligations as preconditions."
       - "State provider guarantees as postconditions."
       - "State object or module truths as invariants and verify them at boundaries."
+
+  - slug: literate-programming
+    skill_name: literate-programming
+    branch: skill/literate-programming
+    status: candidate
+    primary_source:
+      title: "Literate Programming"
+      author: "Donald E. Knuth"
+      year: 1984
+      url: "https://www.literateprogramming.com/knuthweb.pdf"
+    supporting_source:
+      title: "Literate Programming"
+      url: "https://www-cs-faculty.stanford.edu/~knuth/lp.html"
+    agent_use: "Generating or reorganizing code where human understanding, explanatory order, and executable implementation must be developed together."
+    draft_focus:
+      - "Order the explanation for human understanding before machine order."
+      - "Use names, examples, and prose to make the program's intent recoverable."
+      - "Keep documentation and executable behavior synchronized."
+
+  - slug: stepwise-refinement
+    skill_name: stepwise-refinement
+    branch: skill/stepwise-refinement
+    status: candidate
+    primary_source:
+      title: "Program Development by Stepwise Refinement"
+      author: "Niklaus Wirth"
+      year: 1971
+      url: "https://dl.acm.org/doi/10.1145/362575.362577"
+    supporting_source:
+      title: "Public copy of Program Development by Stepwise Refinement"
+      url: "https://pascal.hansotten.com/uploads/wirth/StepwiseRefinement.pdf"
+    agent_use: "Developing algorithms, features, or generated code by moving from a precise high-level specification to executable detail in small refinement steps."
+    draft_focus:
+      - "Start with a high-level specification of what the program must do."
+      - "Refine one design decision at a time."
+      - "Verify each refinement preserves the higher-level intent."
+
+  - slug: structured-programming
+    skill_name: structured-programming
+    branch: skill/structured-programming
+    status: candidate
+    primary_source:
+      title: "Notes on Structured Programming"
+      author: "Edsger W. Dijkstra"
+      year: 1970
+      url: "https://www.cs.utexas.edu/~EWD/ewd02xx/EWD249.PDF"
+    supporting_source:
+      title: "Notes on Structured Programming"
+      url: "https://pure.tue.nl/ws/files/2408738/252825.pdf"
+    agent_use: "Writing or refactoring control flow where reasoning should remain tractable through clear sequencing, selection, repetition, and decomposed program structure."
+    draft_focus:
+      - "Make control flow readable from structure rather than jumps or flags."
+      - "Decompose complex behavior into reasoned blocks with clear entry and exit."
+      - "Verify each block's precondition, effect, and continuation."
+
+  - slug: test-driven-development
+    skill_name: test-driven-development
+    branch: skill/test-driven-development
+    status: candidate
+    primary_source:
+      title: "Test-Driven Development: By Example"
+      author: "Kent Beck"
+      year: 2002
+      url: "https://archive.org/details/est-driven-development-by-example"
+    supporting_source:
+      title: "Test Driven Development"
+      url: "https://www.martinfowler.com/bliki/TestDrivenDevelopment.html"
+    agent_use: "Implementing behavior where tests should drive design through a red-green-refactor loop and protect the emerging behavior."
+    draft_focus:
+      - "Write or identify a failing test for the next behavior."
+      - "Implement the smallest code that makes the test pass."
+      - "Refactor after green while preserving tests."
