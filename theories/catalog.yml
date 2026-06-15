@@ -292,3 +292,75 @@ theories:
       - "Write or identify a failing test for the next behavior."
       - "Implement the smallest code that makes the test pass."
       - "Refactor after green while preserving tests."
+
+  - slug: domain-driven-design
+    skill_name: domain-driven-design
+    branch: skill/domain-driven-design
+    status: candidate
+    primary_source:
+      title: "Domain-Driven Design: Tackling Complexity in the Heart of Software"
+      author: "Eric Evans"
+      year: 2003
+      url: "https://www.domainlanguage.com/ddd/"
+    supporting_source:
+      title: "Domain-Driven Design"
+      url: "https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/"
+    agent_use: "Modeling or generating code for complex business domains where ubiquitous language, bounded contexts, aggregates, and domain behavior should shape the implementation."
+    draft_focus:
+      - "Use domain language in names, tests, and boundaries."
+      - "Separate bounded contexts instead of flattening different meanings."
+      - "Put behavior with the aggregate or domain concept that owns the invariant."
+
+  - slug: cleanroom-software-engineering
+    skill_name: cleanroom-software-engineering
+    branch: skill/cleanroom-software-engineering
+    status: candidate
+    primary_source:
+      title: "Cleanroom Software Engineering"
+      author: "Harlan D. Mills, Michael Dyer, and Richard C. Linger"
+      year: 1987
+      url: "https://voljournals.utk.edu/cgi/viewcontent.cgi?article=1017&context=utk_harlan"
+    supporting_source:
+      title: "Cleanroom Software Engineering: Technology and Process"
+      url: "https://trace.tennessee.edu/entities/publication/4b95aed3-ab10-48dc-9a9b-30e55999fbf7"
+    agent_use: "Generating high-reliability code where defect prevention, precise specifications, incremental development, verification, and statistical testing matter."
+    draft_focus:
+      - "Write a precise behavioral specification before coding."
+      - "Prevent defects through review and verification rather than relying only on debugging."
+      - "Validate increments with meaningful usage or statistical test cases."
+
+  - slug: abstract-interpretation
+    skill_name: abstract-interpretation
+    branch: skill/abstract-interpretation
+    status: candidate
+    primary_source:
+      title: "Abstract Interpretation: A Unified Lattice Model for Static Analysis of Programs by Construction or Approximation of Fixpoints"
+      author: "Patrick Cousot and Radhia Cousot"
+      year: 1977
+      url: "https://www.di.ens.fr/~cousot/publications.www/CousotCousot-POPL-77-ACM-p238--252-1977.pdf"
+    supporting_source:
+      title: "Patrick Cousot publications on abstract interpretation"
+      url: "https://pcousot.github.io/publications.html"
+    agent_use: "Reasoning about program behavior with sound approximations, static analysis, invariants, and safe over-approximations when exact execution is impossible or too expensive."
+    draft_focus:
+      - "Choose an abstraction that preserves the property being checked."
+      - "Over-approximate possible behaviors instead of sampling convenient paths."
+      - "Report precision limits and false-positive risk explicitly."
+
+  - slug: design-patterns
+    skill_name: design-patterns
+    branch: skill/design-patterns
+    status: candidate
+    primary_source:
+      title: "Design Patterns: Elements of Reusable Object-Oriented Software"
+      author: "Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides"
+      year: 1994
+      url: "https://dl.acm.org/doi/abs/10.5555/186897"
+    supporting_source:
+      title: "Design Patterns: Elements of Reusable Object-Oriented Software"
+      url: "https://experts.illinois.edu/en/publications/design-patterns-elements-of-reusable-object-oriented-software/"
+    agent_use: "Applying recurring design solutions only when a present code problem matches a known force, tradeoff, and collaboration structure."
+    draft_focus:
+      - "Identify the recurring design problem and forces before naming a pattern."
+      - "Use existing language/framework patterns before introducing a new pattern structure."
+      - "Avoid pattern cargo culting when simpler code solves the present problem."
