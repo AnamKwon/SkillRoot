@@ -137,3 +137,68 @@ theories:
       - "Treat proposed solutions as problem probes."
       - "Record design rationale: issue, position, argument, decision."
 
+  - slug: information-hiding
+    skill_name: information-hiding
+    branch: skill/information-hiding
+    status: candidate
+    primary_source:
+      title: "On the Criteria To Be Used in Decomposing Systems into Modules"
+      author: "David L. Parnas"
+      year: 1972
+      url: "https://dl.acm.org/doi/10.1145/361598.361623"
+    supporting_source:
+      title: "Public copy of On the Criteria To Be Used in Decomposing Systems into Modules"
+      url: "https://wstomv.win.tue.nl/edu/2ip30/references/criteria_for_modularization.pdf"
+    agent_use: "Designing or changing modules, APIs, packages, or boundaries where likely-changing decisions should be hidden behind stable interfaces."
+    draft_focus:
+      - "Identify the design decisions most likely to change."
+      - "Hide those decisions inside the module that owns them."
+      - "Expose only the interface callers need to remain stable."
+
+  - slug: conways-law
+    skill_name: conways-law
+    branch: skill/conways-law
+    status: candidate
+    primary_source:
+      title: "How Do Committees Invent?"
+      author: "Melvin E. Conway"
+      year: 1968
+      url: "https://www.melconway.com/Home/Committees_Paper.html"
+    agent_use: "Designing systems, services, packages, or ownership boundaries where communication paths and team structure shape architecture."
+    draft_focus:
+      - "Map the people, teams, approval paths, and handoffs around the code."
+      - "Check whether the proposed architecture fights or mirrors those communication paths."
+      - "Change boundaries only when ownership and coordination can support them."
+
+  - slug: cognitive-dimensions
+    skill_name: cognitive-dimensions
+    branch: skill/cognitive-dimensions
+    status: candidate
+    primary_source:
+      title: "Cognitive Dimensions of Notations: Design Tools for Cognitive Technology"
+      author: "Thomas R. G. Green and Marian Petre"
+      year: 1996
+      url: "https://www.cl.cam.ac.uk/~afb21/publications/CT2001.pdf"
+    supporting_source:
+      title: "Cognitive Dimensions of Notations: Understanding the Ergonomics of Diagram Use"
+      url: "https://link.springer.com/chapter/10.1007/978-3-540-87730-1_4"
+    agent_use: "Creating or changing APIs, DSLs, config formats, prompts, schemas, CLIs, or code structures that humans must read, write, and modify."
+    draft_focus:
+      - "Identify the notation the human must manipulate."
+      - "Inspect viscosity, visibility, hidden dependencies, premature commitment, and error-proneness."
+      - "Improve the notation for the user's actual task instead of optimizing only implementation convenience."
+
+  - slug: essential-complexity
+    skill_name: essential-complexity
+    branch: skill/essential-complexity
+    status: candidate
+    primary_source:
+      title: "No Silver Bullet: Essence and Accidents of Software Engineering"
+      author: "Frederick P. Brooks Jr."
+      year: 1986
+      url: "https://www.cs.unc.edu/techreports/86-020.pdf"
+    agent_use: "Estimating, simplifying, or generating code where accidental complexity can be removed but domain essence must remain explicit."
+    draft_focus:
+      - "Separate essential domain complexity from accidental tooling or implementation complexity."
+      - "Remove accidental complexity before inventing broad frameworks."
+      - "Keep essential complexity visible in names, tests, and domain rules."
