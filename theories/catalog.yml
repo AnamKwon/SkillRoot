@@ -202,3 +202,21 @@ theories:
       - "Separate essential domain complexity from accidental tooling or implementation complexity."
       - "Remove accidental complexity before inventing broad frameworks."
       - "Keep essential complexity visible in names, tests, and domain rules."
+
+  - slug: design-by-contract
+    skill_name: design-by-contract
+    branch: skill/design-by-contract
+    status: candidate
+    primary_source:
+      title: "Applying Design by Contract"
+      author: "Bertrand Meyer"
+      year: 1992
+      url: "https://se.inf.ethz.ch/~meyer/publications/computer/contract.pdf"
+    supporting_source:
+      title: "Design by Contract"
+      url: "https://www.eiffel.com/values/design-by-contract/"
+    agent_use: "Generating or changing APIs, classes, functions, services, or tests where responsibilities should be made explicit through preconditions, postconditions, and invariants."
+    draft_focus:
+      - "State caller obligations as preconditions."
+      - "State provider guarantees as postconditions."
+      - "State object or module truths as invariants and verify them at boundaries."
