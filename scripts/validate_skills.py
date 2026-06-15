@@ -20,7 +20,12 @@ def fail(message: str) -> None:
 
 def catalog_slugs() -> set[str]:
     text = CATALOG.read_text(encoding="utf-8")
-    return set(re.findall(r"^  - slug: ([a-z0-9-]+)$", text, re.MULTILINE))
+    slugs = set(re.findall(r"^  - slug: ([a-z0-9-]+)$", text, re.MULTILINE))
+    skill_names = set(re.findall(r"^    skill_name: ([a-z0-9-]+)$", text, re.MULTILINE))
+    mismatches = sorted(slugs.symmetric_difference(skill_names))
+    if mismatches:
+        fail(f"catalog slug and skill_name must match: {', '.join(mismatches)}")
+    return slugs
 
 
 def validate_skill(path: Path, slugs: set[str]) -> None:
@@ -57,4 +62,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
