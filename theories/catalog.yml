@@ -1,0 +1,139 @@
+theories:
+  - slug: programming-as-theory-building
+    skill_name: programming-as-theory-building
+    branch: skill/programming-as-theory-building
+    status: seed-reference
+    primary_source:
+      title: "Programming as Theory Building"
+      author: "Peter Naur"
+      year: 1985
+      url: "https://pages.cs.wisc.edu/~remzi/Naur.pdf"
+    model_skill:
+      title: "AnamKwon programming-as-theory-building skill"
+      url: "https://github.com/AnamKwon/programming-as-theory-building-skill/tree/main/skills/programming-as-theory-building"
+    agent_use: "Code writing, modification, debugging, refactoring, and review where source text must preserve a recoverable program theory."
+    draft_focus:
+      - "Map real-world workflow or invariant to code before editing."
+      - "Place changes beside the closest existing domain concept."
+      - "Verify behavior that proves the theory still holds."
+
+  - slug: situated-action
+    skill_name: situated-action
+    branch: skill/situated-action
+    status: candidate
+    primary_source:
+      title: "Plans and Situated Actions: The Problem of Human-Machine Communication"
+      author: "Lucy Suchman"
+      year: 1987
+      url: "https://www.cs.colby.edu/courses/J16/cs267/papers/Suchman-PlansAndSituatedActions.pdf"
+    agent_use: "Interactive workflows where plans must adapt to local context, user actions, and runtime contingencies."
+    draft_focus:
+      - "Treat plans as resources for action, not scripts that determine action."
+      - "Inspect the current situation before applying a predefined workflow."
+      - "Revise the plan when user behavior or environment evidence contradicts it."
+
+  - slug: reflective-practice
+    skill_name: reflective-practice
+    branch: skill/reflective-practice
+    status: candidate
+    primary_source:
+      title: "The Reflective Practitioner: How Professionals Think in Action"
+      author: "Donald A. Schön"
+      year: 1983
+      url: "https://www.taylorfrancis.com/books/mono/10.4324/9781315237473/reflective-practitioner-donald-sch%C3%B6n"
+    supporting_source:
+      title: "Schön: Design as a Reflective Practice"
+      url: "https://inria.hal.science/inria-00604634/document"
+    agent_use: "Design, debugging, and analysis tasks where surprises during action should trigger reflection before the next move."
+    draft_focus:
+      - "Name the surprise that interrupted routine action."
+      - "Frame, test, and reframe the situation while work is still reversible."
+      - "Capture what changed in the practitioner's working theory."
+
+  - slug: sensemaking
+    skill_name: sensemaking
+    branch: skill/sensemaking
+    status: candidate
+    primary_source:
+      title: "Sensemaking in Organizations"
+      author: "Karl E. Weick"
+      year: 1995
+      url: "https://www.sagepub.com/shop/buy-a-book/sensemaking-in-organizations-1-4988"
+    supporting_source:
+      title: "Sensemaking in Organizations: Reflections on Karl Weick and Social Theory"
+      url: "https://www.epicpeople.org/sensemaking-in-organizations/"
+    agent_use: "Ambiguous incident triage, failing systems, and messy organizational context where plausible interpretation must precede action."
+    draft_focus:
+      - "Collect cues before declaring the problem."
+      - "Prefer plausible, testable interpretations over premature certainty."
+      - "Update the narrative as actions produce new evidence."
+
+  - slug: activity-theory
+    skill_name: activity-theory
+    branch: skill/activity-theory
+    status: candidate
+    primary_source:
+      title: "Learning by Expanding: An Activity-Theoretical Approach to Developmental Research"
+      author: "Yrjö Engeström"
+      year: 1987
+      url: "https://lchc.ucsd.edu/mca/Paper/Engestrom/Learning-by-Expanding.pdf"
+    supporting_source:
+      title: "Activity theory as a framework for analyzing and redesigning work"
+      url: "https://courses.ischool.berkeley.edu/i290-3/s05/papers/Activity_theory_as_a_framework_for_analyzing_and_redesigning_work.pdf"
+    agent_use: "Workflow redesign where tools, rules, roles, community, and object of work interact."
+    draft_focus:
+      - "Identify subject, object, tools, rules, community, division of labor, and outcome."
+      - "Look for contradictions before prescribing a fix."
+      - "Redesign the smallest part of the activity system that changes the outcome."
+
+  - slug: distributed-cognition
+    skill_name: distributed-cognition
+    branch: skill/distributed-cognition
+    status: candidate
+    primary_source:
+      title: "Cognition in the Wild"
+      author: "Edwin Hutchins"
+      year: 1995
+      url: "https://mitpress.mit.edu/9780262581462/cognition-in-the-wild/"
+    supporting_source:
+      title: "The Distributed Cognition Perspective on Human Interaction"
+      url: "https://pages.ucsd.edu/~ehutchins/integratedCogSci/DCOG-Interaction.pdf"
+    agent_use: "Operational systems where knowledge is spread across people, tools, artifacts, logs, dashboards, and procedures."
+    draft_focus:
+      - "Expand the unit of analysis beyond the individual agent."
+      - "Track how information moves through artifacts and handoffs."
+      - "Verify that the whole cognitive system, not just one file, still works."
+
+  - slug: double-loop-learning
+    skill_name: double-loop-learning
+    branch: skill/double-loop-learning
+    status: candidate
+    primary_source:
+      title: "Double Loop Learning in Organizations"
+      author: "Chris Argyris"
+      year: 1977
+      url: "https://theisrm.org/documents/Argyris%20%281977%29%20Double%20Loop%20Learning%20in%20Organizations.pdf"
+    agent_use: "Postmortems, repeated failures, and policy/process fixes where assumptions must be revised, not only actions corrected."
+    draft_focus:
+      - "Separate error correction from governing-variable correction."
+      - "Ask what assumption made the failing action reasonable."
+      - "Change the rule, metric, or policy only when evidence supports it."
+
+  - slug: wicked-problems
+    skill_name: wicked-problems
+    branch: skill/wicked-problems
+    status: candidate
+    primary_source:
+      title: "Dilemmas in a General Theory of Planning"
+      author: "Horst W. J. Rittel and Melvin M. Webber"
+      year: 1973
+      url: "https://www.sympoetic.net/Managing_Complexity/complexity_files/1973%20Rittel%20and%20Webber%20Wicked%20Problems.pdf"
+    supporting_source:
+      title: "Why Horst W.J. Rittel Matters"
+      url: "https://www.dubberly.com/articles/why-horst-wj-rittel-matters.html"
+    agent_use: "Ill-structured product, policy, architecture, or planning work where defining the problem changes the solution space."
+    draft_focus:
+      - "State stakeholders and conflicting criteria before solving."
+      - "Treat proposed solutions as problem probes."
+      - "Record design rationale: issue, position, argument, decision."
+

@@ -1,0 +1,42 @@
+---
+name: {{skill_name}}
+description: "Use when {{agent_use}}"
+---
+
+# {{title}}
+
+Use this skill to translate {{theory_label}} into a compact agent workflow.
+
+## Core Idea
+
+{{core_idea}}
+
+## Before Acting
+
+Answer briefly:
+
+1. **Situation:** What real-world situation is this task part of?
+2. **Theory Fit:** Which concept from the theory applies here?
+3. **Evidence:** What local evidence confirms or contradicts that fit?
+4. **Boundary:** What should this theory not be used to justify?
+5. **Proof:** What check would show the action helped?
+
+## Workflow
+
+{{workflow}}
+
+## Stop Conditions
+
+- The task needs a theory that better explains the situation.
+- The theory would force a broad rewrite or speculative abstraction.
+- The available evidence does not support the chosen framing.
+
+## Response Shape
+
+```text
+Theory: [theory concept -> task situation]
+Changed: [what changed, if anything]
+Verified: [checks run]
+Risk: [remaining uncertainty]
+```
+
