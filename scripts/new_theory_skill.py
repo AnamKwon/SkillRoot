@@ -54,6 +54,9 @@ def nested_scalar(block: str, section: str, key: str) -> str:
 def render(template: str, values: dict[str, str]) -> str:
     for key, value in values.items():
         template = template.replace("{{" + key + "}}", value)
+    missing = sorted(set(re.findall(r"{{([a-z_]+)}}", template)))
+    if missing:
+        die(f"template has unreplaced variables: {', '.join(missing)}")
     return template
 
 
@@ -68,11 +71,26 @@ def main(argv: list[str]) -> int:
 
     block = blocks[slug]
     skill_name = scalar(block, "skill_name")
+    if skill_name != slug:
+        die("catalog skill_name must match slug")
+
     agent_use = scalar(block, "agent_use")
     title = nested_scalar(block, "primary_source", "title") or skill_name.replace("-", " ").title()
     author = nested_scalar(block, "primary_source", "author")
     year = nested_scalar(block, "primary_source", "year")
     url = nested_scalar(block, "primary_source", "url")
+    missing_fields = [
+        name
+        for name, value in {
+            "primary_source.author": author,
+            "primary_source.year": year,
+            "primary_source.url": url,
+        }.items()
+        if not value
+    ]
+    if missing_fields:
+        die(f"catalog entry missing {', '.join(missing_fields)}")
+
     focus = list_values(block, "draft_focus")
 
     skill_dir = ROOT / "skills" / skill_name
@@ -121,4 +139,3 @@ def main(argv: list[str]) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main(sys.argv))
-
