@@ -43,9 +43,40 @@ def catalog_slugs() -> set[str]:
     return slugs
 
 
-def quoted_yaml_value(text: str, key: str) -> str | None:
-    match = re.search(rf"^{re.escape(key)}: \"(.+)\"$", text, re.MULTILINE)
-    return match.group(1) if match else None
+def unquote_yaml_string(value: str, source: Path, key: str) -> str:
+    if len(value) < 2 or not value.startswith('"') or not value.endswith('"'):
+        fail(f"{source.relative_to(ROOT)} {key} must be a quoted string")
+    try:
+        return bytes(value[1:-1], "utf-8").decode("unicode_escape")
+    except UnicodeDecodeError as error:
+        fail(f"{source.relative_to(ROOT)} {key} has invalid escape sequence: {error}")
+
+
+def parse_simple_yaml(text: str, source: Path) -> dict[str, dict[str, object]]:
+    data: dict[str, dict[str, object]] = {}
+    current: str | None = None
+    for line_number, raw_line in enumerate(text.splitlines(), start=1):
+        line = raw_line.rstrip()
+        if not line or line.lstrip().startswith("#"):
+            continue
+        if not raw_line.startswith(" "):
+            if not line.endswith(":"):
+                fail(f"{source.relative_to(ROOT)} line {line_number} expected top-level mapping")
+            current = line[:-1]
+            data[current] = {}
+            continue
+        if current is None:
+            fail(f"{source.relative_to(ROOT)} line {line_number} has nested value before section")
+        if not raw_line.startswith("  ") or raw_line.startswith("   "):
+            fail(f"{source.relative_to(ROOT)} line {line_number} must use two-space indentation")
+        if ": " not in line:
+            fail(f"{source.relative_to(ROOT)} line {line_number} expected key: value")
+        key, value = line.strip().split(": ", 1)
+        if value in {"true", "false"}:
+            data[current][key] = value == "true"
+        else:
+            data[current][key] = unquote_yaml_string(value, source, key)
+    return data
 
 
 def validate_agents_yaml(path: Path, skill_name: str) -> None:
@@ -53,27 +84,26 @@ def validate_agents_yaml(path: Path, skill_name: str) -> None:
     if not agents_yaml.exists():
         fail(f"{path.relative_to(ROOT)} missing agents/openai.yaml")
 
-    text = agents_yaml.read_text(encoding="utf-8")
-    for needle in [
-        "interface:",
-        "  display_name: ",
-        "  short_description: ",
-        "  default_prompt: ",
-        "policy:",
-        "  allow_implicit_invocation: true",
-    ]:
-        if needle not in text:
-            fail(f"{agents_yaml.relative_to(ROOT)} missing {needle.strip()}")
+    data = parse_simple_yaml(agents_yaml.read_text(encoding="utf-8"), agents_yaml)
+    interface = data.get("interface")
+    policy = data.get("policy")
+    if interface is None:
+        fail(f"{agents_yaml.relative_to(ROOT)} missing interface section")
+    if policy is None:
+        fail(f"{agents_yaml.relative_to(ROOT)} missing policy section")
+    for key in ["display_name", "short_description", "default_prompt"]:
+        if key not in interface:
+            fail(f"{agents_yaml.relative_to(ROOT)} missing interface.{key}")
+        if not isinstance(interface[key], str):
+            fail(f"{agents_yaml.relative_to(ROOT)} interface.{key} must be a string")
+    if policy.get("allow_implicit_invocation") is not True:
+        fail(f"{agents_yaml.relative_to(ROOT)} policy.allow_implicit_invocation must be true")
 
-    short_description = quoted_yaml_value(text, "  short_description")
-    if short_description is None:
-        fail(f"{agents_yaml.relative_to(ROOT)} short_description must be quoted")
+    short_description = interface["short_description"]
     if not 25 <= len(short_description) <= 64:
         fail(f"{agents_yaml.relative_to(ROOT)} short_description must be 25-64 chars")
 
-    default_prompt = quoted_yaml_value(text, "  default_prompt")
-    if default_prompt is None:
-        fail(f"{agents_yaml.relative_to(ROOT)} default_prompt must be quoted")
+    default_prompt = interface["default_prompt"]
     if f"${skill_name}" not in default_prompt:
         fail(f"{agents_yaml.relative_to(ROOT)} default_prompt must mention ${skill_name}")
 

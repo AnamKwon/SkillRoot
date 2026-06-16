@@ -12,7 +12,9 @@ workflow with source notes and UI metadata.
 - Keep each skill short and procedural. Put source grounding and misuse notes in `skills/<skill-name>/references/source-notes.md`.
 - Add one theory or skill per branch, then merge through `main` after validation.
 - Record research candidates in `theories/catalog.yml` before generating a skill.
-- Keep `agents/openai.yaml` in sync with `SKILL.md` for every skill.
+- Keep `agents/openai.yaml` in sync with `SKILL.md` for every skill. This file is
+  SkillRoot/Codex skill UI metadata, not an OpenAI API, Assistants, Agents SDK,
+  or Custom GPT manifest.
 - Cite primary papers, books, or stable publisher pages where possible, and add fallback sources when the primary URL is fragile.
 
 ## Current Skills
@@ -68,6 +70,11 @@ Synchronize generated docs and metadata:
 ```bash
 python3 scripts/sync_skill_artifacts.py
 ```
+
+When adding or materially changing a skill, update the `SKILL_DATA` entry in
+`scripts/sync_skill_artifacts.py` at the same time. That script is the source of
+truth for generated `agents/openai.yaml`, enriched `source-notes.md`, README
+rows, and the selection guide.
 
 Validate before committing:
 
