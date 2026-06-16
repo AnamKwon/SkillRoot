@@ -1,0 +1,6 @@
+interface:
+  display_name: "Information Hiding"
+  short_description: "Hide volatile decisions behind interfaces"
+  default_prompt: "Use $information-hiding to choose the module boundary that hides the most volatile design decision."
+policy:
+  allow_implicit_invocation: true

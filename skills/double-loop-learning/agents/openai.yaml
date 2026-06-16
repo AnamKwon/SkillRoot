@@ -1,0 +1,6 @@
+interface:
+  display_name: "Double-Loop Learning"
+  short_description: "Revise assumptions behind repeated failures"
+  default_prompt: "Use $double-loop-learning to identify the governing assumption behind this repeated failure."
+policy:
+  allow_implicit_invocation: true

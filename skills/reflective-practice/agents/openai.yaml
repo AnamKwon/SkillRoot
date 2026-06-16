@@ -1,0 +1,6 @@
+interface:
+  display_name: "Reflective Practice"
+  short_description: "Reframe coding surprises during action"
+  default_prompt: "Use $reflective-practice to reframe this debugging surprise before adding another patch."
+policy:
+  allow_implicit_invocation: true

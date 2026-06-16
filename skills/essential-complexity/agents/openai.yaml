@@ -1,0 +1,6 @@
+interface:
+  display_name: "Essential Complexity"
+  short_description: "Separate domain essence from accidents"
+  default_prompt: "Use $essential-complexity to simplify accidental complexity without hiding the essential domain rules."
+policy:
+  allow_implicit_invocation: true

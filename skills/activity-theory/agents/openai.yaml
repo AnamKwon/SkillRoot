@@ -1,0 +1,6 @@
+interface:
+  display_name: "Activity Theory"
+  short_description: "Workflow change through activity systems"
+  default_prompt: "Use $activity-theory to locate the workflow contradiction before changing this tool or code path."
+policy:
+  allow_implicit_invocation: true

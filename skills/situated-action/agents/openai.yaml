@@ -1,0 +1,6 @@
+interface:
+  display_name: "Situated Action"
+  short_description: "Adapt plans to local runtime evidence"
+  default_prompt: "Use $situated-action to revise this plan based on the current files, tests, and user feedback."
+policy:
+  allow_implicit_invocation: true

@@ -4,11 +4,28 @@
 - Author: Bertrand Meyer
 - Year: 1992
 - URL: https://se.inf.ethz.ch/~meyer/publications/computer/contract.pdf
+- Supporting source: Design by Contract
+- Supporting URL: https://www.eiffel.com/values/design-by-contract/
+
+## Key Concepts
+
+- A software boundary is a contract between caller obligations and provider guarantees.
+- Preconditions, postconditions, and invariants assign responsibility clearly.
+- Checks are most useful where they clarify trusted and untrusted boundaries.
+
+## Agent Translation
+
+Use it to state obligations and guarantees, then test valid and invalid contract cases.
+
+## Common Misuse
+
+Do not scatter defensive checks everywhere when one boundary contract would be clearer.
+
+## Source Mapping
+
+Boundary -> preconditions/postconditions/invariants -> contract tests.
 
 ## Drafting Notes
 
-Summarize only the concepts needed for agent behavior. Do not turn the skill
-into a literature review.
-
-Use this skill for boundary reliability. Prefer clear ownership of obligations
-and guarantees over broad defensive programming everywhere.
+Keep the runnable skill concise. Move detailed theory reminders here, and
+only load this file when the task needs source grounding or misuse checks.

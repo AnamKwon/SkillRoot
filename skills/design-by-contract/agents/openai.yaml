@@ -1,0 +1,6 @@
+interface:
+  display_name: "Design by Contract"
+  short_description: "Explicit caller and provider obligations"
+  default_prompt: "Use $design-by-contract to define preconditions, postconditions, and invariants for this boundary."
+policy:
+  allow_implicit_invocation: true

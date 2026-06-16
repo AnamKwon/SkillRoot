@@ -1,0 +1,6 @@
+interface:
+  display_name: "Distributed Cognition"
+  short_description: "Trace knowledge across people and tools"
+  default_prompt: "Use $distributed-cognition to trace how operational knowledge moves through code, tools, and people."
+policy:
+  allow_implicit_invocation: true

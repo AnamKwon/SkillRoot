@@ -1,0 +1,6 @@
+interface:
+  display_name: "Abstract Interpretation"
+  short_description: "Sound static reasoning with approximations"
+  default_prompt: "Use $abstract-interpretation to reason about this safety property without enumerating every execution path."
+policy:
+  allow_implicit_invocation: true

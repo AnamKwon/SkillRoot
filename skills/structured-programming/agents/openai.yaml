@@ -1,0 +1,6 @@
+interface:
+  display_name: "Structured Programming"
+  short_description: "Keep control flow reasoned and tractable"
+  default_prompt: "Use $structured-programming to simplify this control flow while preserving behavior."
+policy:
+  allow_implicit_invocation: true

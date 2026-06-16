@@ -1,0 +1,6 @@
+interface:
+  display_name: "Design Patterns"
+  short_description: "Apply patterns only when forces match"
+  default_prompt: "Use $design-patterns to decide whether a known pattern fits this recurring design problem."
+policy:
+  allow_implicit_invocation: true

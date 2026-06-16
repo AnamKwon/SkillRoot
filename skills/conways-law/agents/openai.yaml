@@ -1,0 +1,6 @@
+interface:
+  display_name: "Conway's Law"
+  short_description: "Architecture shaped by communication paths"
+  default_prompt: "Use $conways-law to check whether this service or package boundary fits the ownership and handoff structure."
+policy:
+  allow_implicit_invocation: true

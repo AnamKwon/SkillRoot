@@ -1,0 +1,6 @@
+interface:
+  display_name: "Literate Programming"
+  short_description: "Align human explanation with code behavior"
+  default_prompt: "Use $literate-programming to make this implementation readable in the order a maintainer needs."
+policy:
+  allow_implicit_invocation: true

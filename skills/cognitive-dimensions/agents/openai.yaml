@@ -1,0 +1,6 @@
+interface:
+  display_name: "Cognitive Dimensions"
+  short_description: "Ergonomic checks for code notations"
+  default_prompt: "Use $cognitive-dimensions to evaluate this API or config shape for human editing and debugging."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Wicked Problems"
+  short_description: "Probe contested product and architecture work"
+  default_prompt: "Use $wicked-problems to frame this ambiguous product or architecture change before coding."
+policy:
+  allow_implicit_invocation: true

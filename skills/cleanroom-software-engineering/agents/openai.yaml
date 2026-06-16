@@ -1,0 +1,6 @@
+interface:
+  display_name: "Cleanroom Engineering"
+  short_description: "Defect prevention with precise specs"
+  default_prompt: "Use $cleanroom-software-engineering to define the increment, specification, and verification evidence before coding."
+policy:
+  allow_implicit_invocation: true

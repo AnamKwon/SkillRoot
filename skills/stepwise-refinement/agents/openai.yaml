@@ -1,0 +1,6 @@
+interface:
+  display_name: "Stepwise Refinement"
+  short_description: "Refine specs into code one decision at a time"
+  default_prompt: "Use $stepwise-refinement to refine this high-level behavior into executable code in small steps."
+policy:
+  allow_implicit_invocation: true
