@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 import sys
 from pathlib import Path
@@ -47,8 +48,8 @@ def unquote_yaml_string(value: str, source: Path, key: str) -> str:
     if len(value) < 2 or not value.startswith('"') or not value.endswith('"'):
         fail(f"{source.relative_to(ROOT)} {key} must be a quoted string")
     try:
-        return bytes(value[1:-1], "utf-8").decode("unicode_escape")
-    except UnicodeDecodeError as error:
+        return json.loads(value)
+    except json.JSONDecodeError as error:
         fail(f"{source.relative_to(ROOT)} {key} has invalid escape sequence: {error}")
 
 
